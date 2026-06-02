@@ -45,7 +45,7 @@ Required capabilities
 Система должна определять тип запроса:
 
 product specs,
-technical support,
+technical support (call, meeeting, consultation),
 drivers/software,
 availability,
 pricing,

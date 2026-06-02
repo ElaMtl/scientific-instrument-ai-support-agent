@@ -1,0 +1,12 @@
+.env
+*.env
+secrets/
+credentials/
+private/
+data/raw/
+data/emails/
+data/attachments/
+*.key
+*.pem
+*.p12
+*.json.backup
