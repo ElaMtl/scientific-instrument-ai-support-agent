@@ -1,0 +1,1 @@
+### 3. The diagram below shows the MVP classification and routing logic for incoming company emails. The workflow is routed by one primary category and one primary next action. Multi-intent email processing is excluded from the MVP scope and considered a future enhancement.
