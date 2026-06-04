@@ -157,3 +157,9 @@ Additional customer requests may be identified and stored as contextual informat
 Workflow routing is determined solely by the primary category and next action.
 
 Support for multi-intent workflow orchestration is considered a future enhancement and is intentionally excluded from the MVP scope to reduce solution complexity.
+
+The MVP does not introduce a new CRM or order management system.
+
+Instead, it uses existing operational data sources such as email inboxes, Google Sheets, Google Drive folders, and support documents.
+
+The data model describes the information objects required for AI workflow execution, classification, retrieval, response drafting, and traceability.
