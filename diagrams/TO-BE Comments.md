@@ -12,11 +12,15 @@
 - Datasheets
 - FAQ
 - Installation Guides
-- Calibration Instructions
+- Calibration File Storage - Google Disk
 - Troubleshooting Guides
 - Known Issues
 - Previous Support Cases/e-mails
+- Sent Email Archive
 - Expert Knowledge
+- Google Order Sheet
+- Other Knowledge Documents - Google Doc
+- Software License Storage - Google Excel
 
 > [!IMPORTANT]
 > Critical information.
