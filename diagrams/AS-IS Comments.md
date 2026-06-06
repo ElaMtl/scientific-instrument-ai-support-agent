@@ -34,8 +34,3 @@ Inquiry categories may include:
 - Previous email conversations
 - Google Sheets
 - Internal files
-- Shipping provider websites
-
-\*AS-IS OBSERVATION
-
-Most product, scientific, technical, and customer support knowledge exists as tacit knowledge held by the Founder & Product Expert. Documentation is distributed across multiple repositories and is not fully centralized.

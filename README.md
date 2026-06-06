@@ -1,6 +1,6 @@
 # thunderoptics-ai-support-agent
 
-AI-powered email support assistant for technical customer inquiries.
+AI-powered Customer Support Knowledge Platform for a Scientific Equipment Manufacturer/ AI-powered email support assistant for technical customer inquiries.
 
 ## 1. Business Problem and Project Objectives
 

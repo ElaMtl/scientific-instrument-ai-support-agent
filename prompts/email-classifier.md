@@ -1,4 +1,4 @@
-# Email Classification Agent
+# Email Classification Node
 
 **Author:** Elvina Cherepovich
 **Role:** Technical Business Systems Analyst
