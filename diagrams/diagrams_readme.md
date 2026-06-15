@@ -1,8 +1,44 @@
-### 1. Logical Context Decomposition | UML | PlantUML
+### 1. Logical Component-Context Diagram | UML | PlantUML
 
 This diagram shows the main logical business contexts of the AI Customer Inquiry Management System.
 
-//www.plantuml.com/plantuml/png/ZLH1Rziy3BthLn0fyDtQRqtYDBqCJPscAxPYG8jjbrqucqc4sf8hKMspeVzzj2EdZhC1EmZG4zyZ-Kp95vxHSIWBnPeBWazsfJCi8BM6wOLXhd7biFnkPZUG1i-s90StvZ5eju5RDBYYaWp3_SOpbKhv1sqg50LKc3r8z9utajPHncXM1NK8mLE6dk2N0hWKyihPOFBK5jR1jxLcgi-joybjpux6ioIPJDMhKfYnTRj-8XnS1gyDUG-Vdmqv-1_kRwy6W14hjMi21l_aPY2jAOX6H7Hw8jpCbjgi_Y0QmD5ySZLRJ1j3qDgJMWQBpKy2tMhrLjkqzYKztMUd1Nglbnj0aqFbj7MQjQWTFGRo74N3VT6T3KnjNc0BQr4NTQqAUHqr8z6yxXaQdi17OvyBoWNz1tV4JjCJ5ZrNoIAv6lLTHJA13rLb7KlrfNKbihOc5Xp_HP75Bt_iAyhqKcT2zyG-of9zsLSiT8vYpqLz3jdsSaR-vC3Nw4Iy-CeQJnqhul13AD58x4dJipXRf8jHkkWxkoP3hYwOErmok9WfLZlhcsh60kiciukP6-QqTmsgojcE-txYymCRu-vuhaNh39fC9jMyJcs23HvkoYPjdDLYDh-S7zn0UTITCR6uopfZEdtNku5OSN04k6qu1tgfI9GFRI-jhdTpRr5ooteZmW_qE_QmyISETm_l-FXz7UWVd2ibfn4CbQou7zM1KGJZpZwf0-C89h9FTdi1amZEbAoudwhjFw95ihhL8qq-pIuImVaRs4iX7wC-t4Ej1x5-GIOFPV4R
+@startuml
+title Logical Component Context Diagram\nAI Customer Inquiry Management System
+
+skinparam componentStyle rectangle
+
+actor Customer
+actor "Business Owner / SME" as Owner
+
+rectangle "AI Customer Inquiry Management System" {
+
+component "Incoming Inquiry\nManagement" as IIM #D6EAF8
+note right of IIM - Analyze incoming inquiry - Classify and prioritize request - Route inquiry to handling path
+end note
+
+component "Knowledge & Retrieval\nManagement" as KRM #D5F5E3
+note right of KRM - Retrieve support information - Retrieve customer-specific assets - Validate retrieved context
+end note
+
+component "Response Management\n& Human Review" as RMHR #FCF3CF
+note right of RMHR - Generate draft response - Request human review - Approve customer response
+end note
+
+component "Knowledge Governance\n& Continuous Improvement" as KGCI #FADBD8
+note right of KGCI - Log support interaction - Capture approved expert knowledge - Maintain knowledge base
+end note
+}
+
+Customer --> IIM : sends inquiry
+IIM --> KRM : routes request
+KRM --> RMHR : provides retrieved context
+RMHR --> Owner : requests review if needed
+Owner --> RMHR : approves / corrects response
+RMHR --> KGCI : logs resolved case
+Owner --> KGCI : contributes expert knowledge
+KGCI --> KRM : updates knowledge sources
+
+@enduml
 
 ### 2. Customer Inquiry Handling (AS-IS) | BPMN | Storm
 
@@ -33,7 +69,7 @@ What happens when a new email arrives?
 
 Именно её нужно делать первой.
 
-### 5. 2. Retrieval Strategy Sequence Diagram
+### 5. Retrieval Strategy Sequence Diagram
 
 Цель: показать, как система выбирает источник данных.
 
