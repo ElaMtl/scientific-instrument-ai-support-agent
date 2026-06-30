@@ -10,3 +10,5 @@ data/attachments/
 *.pem
 *.p12
 *.json.backup
+.DS_Store
+*.swp
