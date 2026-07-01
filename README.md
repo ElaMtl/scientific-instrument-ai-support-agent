@@ -57,7 +57,7 @@ The goal of this project is to design an AI-assisted technical support solution 
 
 ## Target operating model:
 
-The AI agent should autonomously handle the majority of routine support requests while requiring human involvement only for complex technical investigations, product-specific expert guidance, exception handling, or final validation of low-confidence responses.
+The AI Customer Inquiry Management Agent should autonomously handle the majority of routine support requests while requiring human involvement only for complex technical investigations, product-specific expert guidance, exception handling, or final validation of low-confidence responses.
 
 ## 2. Project Scope
 

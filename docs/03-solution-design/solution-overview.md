@@ -10,7 +10,7 @@
 
 # Purpose
 
-This document provides a concise overview of the proposed AI-powered Customer Inquiry Management Agent.
+This document provides a concise overview of the proposed The AI Customer Inquiry Management Agent.
 
 It summarizes the business problem, solution objectives, major functional components, overall workflow, and key architectural principles without describing implementation details.
 
@@ -44,7 +44,7 @@ One of the long-term objectives of the solution is to gradually transform this t
 
 # Solution Objectives
 
-The proposed AI-powered Customer Inquiry Management Agent aims to:
+The proposed The AI Customer Inquiry Management Agent aims to:
 
 - reduce manual customer support workload;
 - improve response time;

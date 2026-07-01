@@ -1,4 +1,4 @@
-# AI Support Assistant - Discovery Questions
+# The AI Customer Inquiry Management Agent - Discovery Questions
 
 ## 1. Which support requests should never be answered automatically?
 

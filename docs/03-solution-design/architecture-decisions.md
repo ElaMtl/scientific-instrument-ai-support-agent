@@ -20,7 +20,7 @@ The goal is to capture not only what decisions were made, but also why they were
 
 ### Context
 
-The AI assistant is expected to generate customer support responses for a scientific equipment manufacturer.
+The AI Customer Inquiry Management Agent is expected to generate customer support responses for a scientific equipment manufacturer.
 
 Customer inquiries may involve technical specifications, product capabilities, calibration files, software, shipment information, application suitability, and troubleshooting.
 
@@ -30,7 +30,7 @@ Incorrect or unsupported answers may create serious business risks, including in
 
 The solution shall follow a Retrieval-First strategy.
 
-The AI assistant must first retrieve relevant information from approved business knowledge sources before generating a customer-facing draft response.
+The AI Customer Inquiry Management Agent must first retrieve relevant information from approved business knowledge sources before generating a customer-facing draft response.
 
 The model should not generate answers based only on general knowledge or assumptions.
 
