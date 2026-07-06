@@ -251,6 +251,30 @@ The following topics may require future decisions:
 - handling of external internet search;
 - pricing and quotation data strategy.
 
+## Candidates ADR and Iteration 2
+
+- multimodal RAG;
+- attachment preprocessing;
+- vision analysis;
+- knowledge lifecycle.
+
+### ADR-006 Multimodal Knowledge Retrieval
+
+### ADR-007 Cost-Aware Model Routing
+
+### ADR-008 Attachment Safety Gate
+
+- Multimodal Inquiry Processing
+- Cost-Aware Model Routing
+- Attachment Safety Gate
+- Future Investigation
+- Vision model evaluation
+- Spectrum interpretation
+- Multimodal embeddings
+- Knowledge lifecycle
+- Attachment preprocessing
+- Inquiry Package abstraction
+
 ---
 
 ## Revision History
