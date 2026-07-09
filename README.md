@@ -1,4 +1,4 @@
-# thunderoptics-ai-support-agent
+# scientific-instrument-ai-support-agent
 
 AI-powered Customer Support Knowledge Platform for a Scientific Equipment Manufacturer/ AI-powered email support assistant for technical customer inquiries.
 
