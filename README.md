@@ -1,165 +1,111 @@
-# scientific-instrument-ai-support-agent
+# Scientific Instrument AI Support Agent
 
-AI-powered Customer Support Knowledge Platform for a Scientific Equipment Manufacturer/ AI-powered email support assistant for technical customer inquiries.
+**RAG-based AI support agent for technical customer inquiries at a scientific instrument manufacturer.**
 
-## 1. Business Problem and Project Objectives
+The project focuses on requirements analysis, solution design, and architecture for an AI-assisted support system serving a small manufacturer of spectroscopy instruments used in research, industry, education, and applied science.
 
-### Business Problem
+## Business Problem
 
-The company is a small scientific equipment manufacturer specializing in spectroscopy instruments for research, industrial, educational, and applied scientific use cases.
+Customer support depends heavily on a single domain expert who also manages sales, procurement, marketing, website operations, and product R&D.
 
-The business owner performs multiple operational roles simultaneously, including:
+A significant share of expert time is spent processing repetitive technical inquiries, searching historical emails and operational records, locating support materials, and preparing responses.
 
-- Technical support
-- Sales
-- Procurement
-- Marketing
-- Website management
-- Product development and R&D
+Key challenges:
 
-A significant portion of the owner's time is spent processing incoming customer emails and providing technical support.
+- high dependency on a single subject matter expert;
+- repetitive support requests and long response preparation time;
+- knowledge concentrated in individual experience;
+- fragmented and incomplete support materials;
+- limited scalability and risk of inconsistent responses.
 
-The current support process presents several challenges:
+## Solution
 
-- High dependency on a single subject matter expert
-- Large volume of repetitive support requests
-- Long response preparation time
-- Limited scalability of customer support operations
-- Knowledge concentrated in the owner's experience rather than in structured repositories
-- Incomplete and outdated documentation, templates, and support materials
-- Risk of knowledge loss and inconsistent responses
+The project designs a **Retrieval-Augmented Generation (RAG) support agent** that:
 
-### Project Objectives
+- classifies incoming customer inquiries;
+- retrieves relevant information from approved knowledge sources;
+- searches historical support emails and customer-specific order records;
+- drafts grounded customer responses;
+- locates drivers, calibration files, manuals, and technical documentation;
+- routes complex or low-confidence cases to the domain expert;
+- preserves source traceability and human oversight.
 
-The goal of this project is to design an AI-assisted technical support solution that reduces operational dependency on a single subject matter expert and automates repetitive support activities.
+### High-Level Flow
 
-## Expected business outcomes:
+**Customer Email → Classification → Retrieval → Response Drafting → Human Review / Automated Action**
 
-- Reduce the cognitive load on the business owner
-- Minimize time spent on repetitive and low-value support activities
-- Reduce response preparation time for common customer inquiries
-- Improve consistency and quality of customer communications
-- Preserve and operationalize domain knowledge currently held by a single expert
-- Increase scalability of customer support operations
-- Enable the business owner to focus on product development, innovation, and strategic activities
+Primary knowledge sources:
 
-## Expected solution capabilities:
+1. Historical sent emails
+2. Order register
+3. Product manuals and technical documentation
 
-- Automatically classify incoming customer inquiries
-- Identify common and repetitive support requests
-- Retrieve relevant information from approved knowledge sources
-- Generate response drafts for customer inquiries
-- Retrieve customer-specific information when required
-- Locate and attach relevant support materials, such as drivers, software packages, manuals, and documentation
-- Recommend escalation when a request requires expert review
-- Route complex, ambiguous, or high-risk inquiries to the business owner
-- Maintain traceability of information sources used to generate responses
-
-## Target operating model:
-
-The AI Customer Inquiry Management Agent should autonomously handle the majority of routine support requests while requiring human involvement only for complex technical investigations, product-specific expert guidance, exception handling, or final validation of low-confidence responses.
-
-## 2. Project Scope
+## Project Scope
 
 ### In Scope
 
-The project focuses on the analysis and design of an AI-assisted technical support solution.
-
-Key activities include:
-
-- Business process analysis
-- AS-IS and TO-BE process modeling
-- Support inquiry classification design
-- Knowledge base requirements analysis
-- AI-assisted response generation workflow design
-- Functional and non-functional requirements definition
-- Data model design
-- Integration requirements analysis
-- AI governance and escalation rules definition
-- Acceptance criteria definition
+- business process analysis;
+- AS-IS and TO-BE process modelling;
+- support inquiry classification design;
+- knowledge base and retrieval requirements;
+- RAG workflow design;
+- functional and non-functional requirements;
+- data model design;
+- integration requirements;
+- AI governance and escalation rules;
+- use cases and acceptance criteria.
 
 ### Out of Scope
 
-The following items are outside the current project scope:
+- full production implementation;
+- enterprise CRM implementation;
+- complete knowledge base migration;
+- product development and R&D processes;
+- sales, procurement, and marketing automation.
 
-- Full production implementation
-- Enterprise CRM implementation
-- Complete knowledge base migration
-- Product development and R&D processes
-- Sales process automation
-- Procurement process automation
-- Marketing process automation
+## Primary Stakeholder
 
-### Implementation Note
+### Business Owner / Subject Matter Expert
 
-The primary objective of this repository is requirements analysis, solution design, and architecture definition.
+The business owner:
 
-Implementation of an end-to-end workflow in n8n may be explored as a future phase or as a limited proof of concept.
-
-## 3. Stakeholders
-
-### Primary Stakeholder
-
-#### Business Owner / Subject Matter Expert
-
-Responsibilities:
-
-- Provides product and support expertise
-- Reviews generated responses when required
-- Defines business priorities
-- Validates requirements and proposed solutions
-- Acts as the primary source of domain knowledge
-
-### Secondary Stakeholders
-
-#### Customers
-
-- Submit support requests
-- Receive support responses
-- Benefit from improved response time and consistency
-
-#### Future Support Personnel
-
-- May use the solution to handle customer inquiries
-- Benefit from structured knowledge and standardized processes
-
-#### Solution Developer / Automation Engineer
-
-- Implements the designed solution
-- Integrates AI services and supporting systems
-- Maintains automation workflows and technical components
-
-## Project Constraints and Assumptions
-
-### Constraints
-
-- The solution should minimize implementation and operational costs.
-- Preference should be given to low-cost or pay-as-you-go technologies.
-- The project should leverage existing tools and infrastructure whenever possible.
-- The solution should not require a dedicated support team or AI operations team.
-- The business has limited resources available for software licensing and infrastructure.
-- The solution should be maintainable by a small organization with limited IT capacity.
-- The initial implementation should prioritize simplicity over architectural complexity.
-
-### Assumptions
-
-- Most incoming support inquiries are repetitive and follow recognizable patterns.
-- Existing product documentation, manuals, and support materials can be used as knowledge sources.
-- Human review will remain available for complex or low-confidence cases.
-- Historical customer emails can be used to identify common support scenarios and response patterns.
+- provides product and technical support expertise;
+- defines business priorities;
+- validates requirements and proposed solutions;
+- reviews generated responses when expert involvement is required;
+- acts as the primary source of domain knowledge.
 
 ## MVP Design Decision
 
-The initial version of the Email Classification Model supports a single primary request per email.
+The initial version supports a **single primary request per email**.
 
-Additional customer requests may be identified and stored as contextual information but do not trigger independent workflow execution.
+Additional customer requests may be identified and stored as contextual information but do not trigger independent workflow execution. Routing is determined by the primary category and next action.
 
-Workflow routing is determined solely by the primary category and next action.
+Multi-intent workflow orchestration is intentionally excluded from the MVP to reduce solution complexity.
 
-Support for multi-intent workflow orchestration is considered a future enhancement and is intentionally excluded from the MVP scope to reduce solution complexity.
+The MVP does not introduce a new CRM or order management system. It uses existing operational data sources:
 
-The MVP does not introduce a new CRM or order management system.
+- email inboxes and historical sent emails;
+- Google Sheets order records;
+- Google Drive folders;
+- product manuals and support documentation.
 
-Instead, it uses existing operational data sources such as email inboxes, Google Sheets, Google Drive folders, and support documents.
+The data model defines the information objects required for classification, retrieval, response drafting, workflow execution, and source traceability.
 
-The data model describes the information objects required for AI workflow execution, classification, retrieval, response drafting, and traceability.
+## Repository Contents
+
+- AS-IS and TO-BE process models
+- Functional and non-functional requirements
+- AI inquiry classification model
+- RAG and retrieval design
+- Data model
+- Integration and sequence diagrams
+- Use cases and acceptance criteria
+- AI governance and escalation rules
+- n8n workflow design
+
+## Implementation Status
+
+The current phase focuses on **requirements analysis, solution design, and architecture definition**.
+
+An end-to-end n8n workflow may be implemented as a limited proof of concept in a future phase.
