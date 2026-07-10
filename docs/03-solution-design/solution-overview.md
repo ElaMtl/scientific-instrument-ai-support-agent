@@ -20,7 +20,7 @@ This document serves as the primary entry point to the solution design documenta
 
 # Business Problem
 
-XXX is a small manufacturer of spectroscopy instruments for research, industry, education, and applied scientific fields.
+ABC is a small manufacturer of spectroscopy instruments for research, industry, education, and applied scientific fields.
 
 The business owner performs multiple operational roles, including:
 
